@@ -1,56 +1,44 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-	int a,b;
-    scanf("%d \n",&a);
-    scanf("%d \n",&b);
+class B;  //decleared such that void fun(A,B) can identify 
+          // B is a class.
+class A
+{
+	private:
+		int a;
 
-    cout << a <<"\n" << b << endl;
+	public:
+		void set_data(int x)
+		{
+			a=x;
+		}
+		friend void fun(A,B);
+};
 
-    for(int n=a;n<=b;n++){
-    	if(n==1){
-    		printf("one \n");
-    	}
+class B
+{
+	private:
+		int b;
 
-    	else if(n==2){
-    		printf("two \n");
-    	}
+	public:
+		void set_data(int y)
+		{
+			b=y;
+		}
+		friend void fun(A,B);
+};
 
-    	else if(n==3){
-    		printf("three \n");
-    	}
+void fun(A o1,B o2)
+{
+	cout<<"sum is: "<<o1.a+o2.b;
+}
 
-    	else if(n==4){
-    		printf("four \n");
-    	}
-
-    	else if(n==5){
-    		printf("five \n");
-    	}
-
-    	else if(n==6){
-    		printf("six \n");
-    	}
-
-    	else if(n==7){
-    		printf("seven \n");
-    	}
-
-    	else if(n==8){
-    		printf("eight \n");
-    	}
-
-    	else if(n==9){
-    		printf("nine \n");
-    	}
-
-    	else if(n>9 && n%2==0){
-    		printf("even \n");
-    	}
-
-    	else{
-    		printf("odd \n");
-    	}
-    }   
+int main()
+{
+	A obj1;
+	obj1.set_data(3);
+	B obj2;
+	obj2.set_data(7);
+	fun(obj1,obj2);
 }

@@ -1,24 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-	int t;
-	cin >> t;
-	while(t--){
-		int n;
-		cin >> n;
-		long long product = 1;
-		for(int i=0; i<n; i++){
-			int x;
-			cin >> x;
-			product = product * x;
+class dummy
+{
+	private:
+		int a,b;
+	public:
+		void set_data(int x,int y)
+		{
+			a=x;
+			b=y;
 		}
-		int least_sig_digit = product % 10;
-		if(least_sig_digit==2 || least_sig_digit==3 || least_sig_digit==5){
-			cout << "YES\n";
+
+		void show_data()
+		{
+			cout<<"\n a="<<a<<" b="<<b;
 		}
-		else{
-			cout << "NO\n";
-		}
-	}
+};
+
+int main()
+{
+	dummy d1;
+	d1.set_data(3,4);
+
+	dummy d2=d1;      //shallow copy
+	d2.show_data();
+
 }

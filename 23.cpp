@@ -1,20 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-char upper(char c){
-	return 'A' + (c- 'a');
-}
-
-int main(){
-	while (true){
-		string s;
-		cin >> s;
-		if(s.size() == 0){
-			break;
-		}
-		for(int i = 0; i<s.size(); ++i){
-			s[i] = upper(s[i]);
-		}
-		cout << s << endl;
-	}
+int main()
+{
+	ifstream fin;
+	fin.open("myfile.dat");
+	cout<<fin.tellg();
+	cout<<"\n"<<(char)fin.get();
+	cout<<(char)fin.get();
+	cout<<"\n"<<fin.tellg();
+	fin.seekg(0);
+	cout<<"\n"<<fin.tellg();
+	cout<<"\n"<<(char)fin.get();
 }

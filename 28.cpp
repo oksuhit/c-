@@ -1,49 +1,60 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-char upper(char c){
-	return 'A' + (c-'a');
-}
+class product
+{
+	private:
+		int m,n;
 
-char lower(char c){
-	return 'a' + (c-'A');
-}
+	public:
+		void set_data(int x,int y)
+		{
+			m=x;
+			n=y;
+		}
 
-int main(){
-	string s;
-	cin >> s;
-	for(int i=0; i< s.size(); i++){
-		if(s[i]>='a' && s[i]<='z'){
-			s[i] = upper(s[i]);
+		int getm()
+		{
+			return(m);
 		}
-		else if (s[i]>='A' && s[i]<='Z'){
-			s[i] = lower(s[i]);
+
+		int getn()
+		{
+			return(n);
 		}
-	}
-	int result=0;
-	cout << s << endl;
-	for(int i=0; i< s.size(); i++){
-		if(s[i]>='a' && s[i]<='z'){
-			result = result - s[i];
+};
+
+
+class Item
+{
+	private:
+		int a,b;
+
+	public:
+		void show_data()
+		{
+			cout<<" \n a="<<a<<" b="<<b;
 		}
-		else if (s[i]>='A' && s[i]<='Z'){
-			result = result + s[i];
+
+		Item(product p)
+		{
+			a=p.getm();
+			b=p.getn();
 		}
-	}
-	if(result < 0){
-		result = result * -1;
-	}
-	int flag = 0;
-	for(int i=2; i < result; i++){
-		if(result % 1 == 0){
-			flag = 1;
-			break;
+
+		Item()
+		{
+			// default constructor
 		}
-	}
-	if(flag == 0){
-		cout << 1;
-	}
-	else{
-		cout << 0;
-	}
+};
+
+
+
+int main()
+{
+	Item i1;
+	product p1;
+	p1.set_data(3,4);
+	i1=p1;
+	i1.show_data();
 }

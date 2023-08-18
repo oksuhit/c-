@@ -1,48 +1,39 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-	int N;
-	cin >> N ;
-    if(N==1){
-        printf("one");
-    }
+class complex1{
+    private:
+        int a,b;
     
-    else if(N==2){
-        printf("two");
-    }
+    public:
+        void set_data(int x,int y)
+        { a=x; b=y;}
     
-    else if(N==3){
-        printf("three");
-    }
-    
-    else if(N==4){
-        printf("four");
-    }
-    
-    else if(N==5){
-        printf("five");
-    }
-    
-    else if(N==6){
-        printf("six");
-    }
-    
-    else if(N==7){
-        printf("seven");
-    }
-    
-    else if(N==8){
-        printf("eight");
-    }
-    
-    else if(N==9){
-        printf("nine");
-    }
-    
-    else{
-        printf("no. is greater than 9");
-    }
+        void show_data()
+        {cout<<"\n a= "<<a<<" b= "<<b;}
 
-    return 0;
+        friend void fun(complex1);   
+        // friend function can access any member of the class
+        //to which it is friend
+
+        //friend fun cannot access members of the class directly
+
+        //it has no caller object
+
+        //it should not be defined with membership label
+
+        //friend function can become friend to more
+        //than one class 
+};
+
+void fun(complex1 c)
+{
+	cout<<"sum is: "<<c.a+c.b;
+}
+
+int main()
+{
+	complex1 c1,c2,c3;
+	c1.set_data(2,3);
+	fun(c1);
 }

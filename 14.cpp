@@ -1,18 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-	int t;
-	cin >> t;
-	while(t--){
-		int n;
-		cin >> n;
-		int digit_sum = 0;
-		while(n>0){
-			int last_digit = n%10;
-			digit_sum = digit_sum + last_digit;
-			n=n/10;
+class A
+{
+	private:
+		int a;
+
+	protected:
+		void set_value(int k)
+		{
+			a=k;
 		}
-		cout << digit_sum << endl;
-	}
+};
+
+class B: public A
+{
+	public:
+		void set_data(int x)
+		{
+			set_value(x);
+		}
+};
+
+int main()
+{
+	B obj;
+	obj.set_data(4);
 }

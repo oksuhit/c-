@@ -1,14 +1,12 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void increment(int *x){
-	// (*x)++;
-	*x = * x+1;
-}
-
-int main(){
-	int a = 4;
-	cout << a << endl;
-	increment(&a);
-	cout << a << endl;
+int main()
+{
+	ofstream fout;
+	char ch;
+	fout.open("myfile.dat");
+	int pos;
+	pos=fout.tellp();
+	cout<<pos;
 }

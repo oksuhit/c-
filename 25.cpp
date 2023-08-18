@@ -1,21 +1,45 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-	int t;
-	cin >> t;
-	while(t--){
-		int n;
-		cin >> n;
-		string s;
-		cin >> s;
-		long long result = 0;
-		long long power2 = 1;
-		for(int i=s.size() - 1; i>=0; i--){
-			int binary_digit = s[i] - '0'; //the string char is converted into int, by substracting it with zero,such that it gives the asci value result.
-            result = result + (binary_digit * power2);
-            power2 = power2 * 2;
+class dummy
+{
+	private:
+		int a,b;
+		int *p;
+
+	public:
+
+		dummy()
+		{
+			p=new int;
 		}
-        cout << result << endl;
-	}
+
+		void set_data(int x,int y,int z)
+		{
+			a=x;
+			b=y;
+			*p=z;
+		}
+
+		void show_data()
+		{
+			cout<<"\n a="<<a<<" b="<<b<<" c="<<*p;
+		}
+
+		dummy(dummy &d)      //deep copy,because new pointer is also coppied
+		{
+			a=d.a;
+			b=d.b;
+			p=new int;
+			*p=*(d.p);
+		}
+};
+
+int main()
+{
+	dummy d1;
+	d1.set_data(3,4,5);
+	dummy d2=d1;
+
+	d2.show_data();
 }

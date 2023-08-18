@@ -1,12 +1,31 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-	string str = "hello";
-	cout << str <<endl;
-	string str1;
-	cin >> str1;
-	cout << str1 << endl;
-	string result = str + str1;
-	cout << result << endl;
+class array
+{
+	private:
+		int a[10];
+
+	public:
+		void insert(int index, int value)
+		{
+			a[index]=value;
+		}
+};
+
+class stack: public array
+{
+	int top;
+	public:
+		void push(int value)
+		{
+			insert(top,value);
+		}
+};
+
+void main()
+{
+	stack s1;
+	s1.push(34);
+	s1.insert(2,56);
 }

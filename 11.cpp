@@ -1,31 +1,40 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int max_of_four(int a, int b, int c, int d){
-	int n;
-    if(a>=b && a>=c && a>=d){
-    	n=a;
-    }
+class complex1
+{
+	private:
+		int a,b;
 
-    else if(b>=a && b>=c && b>=d){
-    	n=b;
-    }
-    
-    else if(c>=a && c>=b && c>=d){
-    	n=c;
-    }    
-    
-    else{
-    	n=d;
-    }
+	public:
+		void set_data(int x, int y)
+		{
+			a=x;
+			b=y;
+		}
 
-    return n;
+		void show_data()
+		{
+			cout<<"\n a: "<<a<<" b: "<<b;
+		}
+
+		friend complex1 operator +(complex1,complex1);
+
+};
+
+complex1 operator +(complex1 X, complex1 Y)
+{
+	complex1 temp;
+	temp.a=X.a + Y.b;
+	temp.b=X.b + Y.b;
+	return(temp);
 }
 
-
-int main() {
-    int a, b, c, d;
-    scanf("%d %d %d %d", &a, &b, &c, &d);
-    int ans = max_of_four(a, b, c, d);
-    printf("%d", ans);
+int main()
+{
+	complex1 c1,c2,c3;
+	c1.set_data(3,4);
+	c2.set_data(5,6);
+	c3=c1+c2;
+	c3.show_data();
 }

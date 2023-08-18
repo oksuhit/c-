@@ -1,19 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void update(int *a,int *b) {
-    *a = *a+ *b;
-    // int diff= *a - *b;
-    // printf("%d",sum);
-}
+class box
+{
+	private:
+		int l,b,h;
 
-int main() {
-    int a, b;
-    int *pa = &a, *pb = &b;
-    
-    scanf("%d %d", &a, &b);
-    update(&pa,&pb);
-    printf("%d\n%d", a, b);
+	public:
+		void set_dimension(int l,int b, int h)
+		{
+			this->l=l;
+			this->b=b;
+			this->h=h;
+		}
 
-    return 0;
+		void show_dimension()
+		{
+			cout<<"\n l= "<<l<<" b= "<<b<<" h= "<<h;
+		}
+};
+
+int main()
+{
+	box small_box;
+	small_box.set_dimension(12,10,5);
+	small_box.show_dimension();
 }

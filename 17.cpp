@@ -1,12 +1,29 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-	string str;
-	cin >> str;
-	string str_rev;
-	for(int i=str.size()-1; i>=0 ; --i){
-		str_rev.push_back(str[i]);
-	}
-	cout << str_rev;
+class box
+{
+	private:
+		int l,b,h;
+
+	public:
+		void set_dimension(int x,int y, int z)
+		{
+			l=x;
+			b=y;
+			h=z;
+		}
+
+		void show_dimension()
+		{
+			cout<<"\n l= "<<l<<" b= "<<b<<" h= "<<h;
+		}
+};
+
+int main()
+{
+	box *p,small_box;
+	p=&small_box;
+	p->set_dimension(12,10,5);
+	p->show_dimension();
 }

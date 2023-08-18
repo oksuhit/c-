@@ -1,24 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main(){
-	// datatypes = char,int,float,double,bool
-	char c = 'a';
-	int a = 2;
-	int b = 3;
-	int sum = a+b;
-	double d = 3.5;
-	bool e = true;
-	bool f = false;
-	bool g = -123;
-	bool h = 23;
-	bool i = 0;  //only zero is considerd as false rest all no. are considered true.
-	cout << c <<endl;
-	cout << sum << endl; //endl= ends line
-	cout << d << endl;
-	cout << e << endl;
-	cout << f << endl;
-	cout << g << endl;
-	cout << h << endl;
-	cout << i << endl;
+class complex1{
+    private:
+        int a,b;
+    
+    public:
+        // void set_data(int x,int y)
+        // { a=x; b=y;}
+    
+        void show_data() //class member
+        {cout<<"\n a= "<<a<<" b= "<<b;}
+};
+
+// we have to define the class member function like this,
+//if we are using it outside the class
+void complex1 :: set_data(int x,int y){
+    a=x;
+    b=y;
+}
+
+int main()
+{
+    complex1 c1;  //here c1 is an object
+    c1.set_data(3,4);
+    c1.show_data();
 }
